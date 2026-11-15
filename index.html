@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eagle Client - Download v1.2</title>
-<meta name="description" content="Eagle Client: Roblox Performance Client mit Fast Flags, FPS-Boost, Games-Suche und Fortnite-Einstellungen. Kein Injection, kein Cheat. Jetzt EXE downloaden.">
+<title>Eagle Client - Download v1.3</title>
+<meta name="description" content="Eagle Client: Roblox Performance Client mit Fast Flags, FPS-Boost, Games-Suche, Fortnite-Einstellungen und fünf echten Tools. Kein Injection, kein Cheat. Jetzt EXE downloaden.">
 <style>
   :root{
     --bg:#03050F; --bg2:#070B22; --panel:#0A0F26;
@@ -121,6 +121,18 @@
   .dl-meta{margin-top:20px; font-family:var(--mono); font-size:13px; color:var(--dimmer)}
   .dl-meta b{color:var(--cyan)}
 
+  /* ---------- Live-Countdown bis zum nächsten Update ---------- */
+  .updline{display:flex; align-items:center; gap:11px; flex-wrap:wrap; margin-top:16px;
+    padding:10px 16px; border:1px solid var(--border); border-radius:12px; width:fit-content; max-width:100%;
+    background:linear-gradient(90deg, rgba(0,229,255,.09), rgba(124,77,255,.09))}
+  .upd-dot{width:9px; height:9px; border-radius:50%; background:var(--lime);
+    box-shadow:0 0 10px var(--lime); animation:updblink 1.6s infinite}
+  .upd-label{font-size:11px; letter-spacing:.18em; color:var(--cyan); font-weight:700}
+  .upd-clock{font-family:var(--mono); font-size:21px; font-weight:700; color:#fff;
+    letter-spacing:.06em; text-shadow:0 0 18px rgba(0,229,255,.6)}
+  .upd-hint{font-size:11.5px; color:var(--dim)}
+  @keyframes updblink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+
   /* ---------- Marquee ---------- */
   .marquee{overflow:hidden; border-top:1px solid rgba(0,229,255,.25);
     border-bottom:1px solid rgba(0,229,255,.25); background:rgba(0,229,255,.05); padding:14px 0}
@@ -228,7 +240,7 @@
   <div class="brand">
     <div class="logo"><span>🦅</span></div>
     <b>EAGLE CLIENT</b>
-    <span class="ver">v1.2</span>
+    <span class="ver">v1.3</span>
   </div>
   <div class="links">
     <a href="#features">Features</a>
@@ -241,7 +253,7 @@
 <!-- ================= HERO ================= -->
 <header class="hero wrap">
   <div class="badge-row reveal">
-    <span class="chip">NEUES UPDATE v1.2</span>
+    <span class="chip">NEUES UPDATE v1.3</span>
     <span class="chip magenta">WINDOWS 10/11 · 64-BIT</span>
     <span class="chip lime">0 INJECTION · 0 MODS</span>
   </div>
@@ -249,24 +261,32 @@
   <h1 class="reveal"><span class="grad">Eagle Client</span></h1>
 
   <p class="lead reveal">
-    Der Roblox <b>Performance Client</b>: Fast Flags, FPS-Boost, Games-Suche und ein
-    kompletter Fortnite-Tab – plus <b>Eagle Tweaks</b>, Plugins und Admin-Steuerung
-    für deinen ganzen PC. Alles über offizielle Configs: kein Injecting, kein Cheat.
+    Der Roblox <b>Performance Client</b>: Fast Flags, FPS-Boost, Games-Suche, ein
+    kompletter Fortnite-Tab und fünf echte Tools – plus <b>Eagle Tweaks</b>, Plugins
+    und Admin-Steuerung für deinen ganzen PC. Alles über offizielle Configs: kein Injecting, kein Cheat.
   </p>
 
   <div class="cta reveal">
-    <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.2/EagleClient.exe" download class="btn btn-primary btn-pulse">⬇ EXE HERUNTERLADEN</a>
-    <a href="#changelog" class="btn btn-ghost">✨ Was ist neu in v1.2?</a>
+    <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.3/EagleClient.exe" download class="btn btn-primary btn-pulse">⬇ EXE HERUNTERLADEN</a>
+    <a href="#changelog" class="btn btn-ghost">✨ Was ist neu in v1.3?</a>
   </div>
 
   <div class="dl-meta reveal">
-    <b>EagleClient.exe</b> · Version <b>1.2</b> · ~162 MB · Standalone-EXE · kein Installer
+    <b>EagleClient.exe</b> · Version <b>1.3</b> · ~162 MB · Standalone-EXE · kein Installer
+  </div>
+
+  <!-- Live-Countdown: 24 h bis zum nächsten Update (identisch zur App) -->
+  <div class="updline reveal">
+    <span class="upd-dot"></span>
+    <span class="upd-label">NÄCHSTES UPDATE IN</span>
+    <b class="upd-clock" id="updClock">--:--:--</b>
+    <span class="upd-hint" id="updHint">Der Timer startet mit dem Release und läuft 24 Stunden.</span>
   </div>
 
   <div class="stats reveal" style="margin-top:52px">
     <div class="stat"><div class="num" data-count="77">0</div><div class="lbl">Fortnite-Einstellungen</div></div>
     <div class="stat"><div class="num" data-count="12" data-suffix="+">0</div><div class="lbl">Fast Flags mit einem Klick</div></div>
-    <div class="stat"><div class="num" data-count="8">0</div><div class="lbl">Bereiche in der Seitenleiste</div></div>
+    <div class="stat"><div class="num" data-count="9">0</div><div class="lbl">Bereiche in der Seitenleiste</div></div>
     <div class="stat"><div class="num" data-count="0">0</div><div class="lbl">Injectionen &amp; Mods</div></div>
   </div>
 </header>
@@ -334,6 +354,12 @@
       <p>Eigene Tools als Plugin hinzufügen und mit einem Klick starten. Dazu klare Administrator-Steuerung: die App fragt, bevor sie Rechte bekommt.</p>
       <span class="tag">NEU IN V1.2</span>
     </div>
+    <div class="card reveal">
+      <div class="ico">🧰</div>
+      <h3>Werkzeug-Kiste</h3>
+      <p>Fünf echte Tools in der App: CPU-Benchmark, Festplatten-Analyse, Netzwerk-Ping, Junk-Scanner und RAM-Aufräumen – offline, sicher und ohne Fremdprozesse.</p>
+      <span class="tag">NEU IN V1.3</span>
+    </div>
   </div>
 </section>
 
@@ -364,21 +390,21 @@
 <section id="download" class="wrap">
   <div class="dl reveal">
     <div class="kicker" style="color:#8FF6FF">// Download</div>
-    <h2 style="margin-bottom:10px">Hol dir <span class="grad">v1.2</span></h2>
-    <p class="sub" style="margin:0 auto">Die aktuelle Version mit Eagle Tweaks, Plugins, Admin-Steuerung und sortierter Seitenleiste.</p>
+    <h2 style="margin-bottom:10px">Hol dir <span class="grad">v1.3</span></h2>
+    <p class="sub" style="margin:0 auto">Die aktuelle Version mit fünf echten Tools, Konfetti-Überraschung, Eagle Tweaks, Plugins und Admin-Steuerung.</p>
 
     <div class="cta" style="margin-top:32px">
-      <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.2/EagleClient.exe" download class="btn btn-primary btn-pulse" style="font-size:19px;padding:20px 42px">
+      <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.3/EagleClient.exe" download class="btn btn-primary btn-pulse" style="font-size:19px;padding:20px 42px">
         ⬇ EAGLECLIENT.EXE LADEN
       </a>
     </div>
 
     <div class="file">
-      <span class="pill">v1.2</span>
+      <span class="pill">v1.3</span>
       <span class="pill">~162 MB</span>
       <span class="pill">Windows x64</span>
       <span class="pill">Self-contained</span>
-      <span class="pill">14.11.2026</span>
+      <span class="pill">15.11.2026</span>
     </div>
   </div>
 </section>
@@ -388,6 +414,23 @@
   <div class="kicker reveal">// Changelog</div>
   <h2 class="reveal">Was sich <span class="grad">geändert hat</span></h2>
   <p class="sub reveal">Jedes Update hebt die Versionsnummer – hier steht genau, was dazukam, verbessert, gefixt oder entfernt wurde. Derselbe Changelog steht in der App unter Einstellungen.</p>
+
+  <div class="release reveal">
+    <div class="rel-head">
+      <span class="rel-ver">v1.3</span>
+      <span class="rel-date">15.11.2026</span>
+      <span class="rel-title">Tools, Konfetti &amp; Update-Countdown</span>
+    </div>
+    <div class="rel-line"></div>
+
+    <div class="item"><span class="kind k-neu">NEU</span><p>Tools-Seite mit fünf echten Werkzeugen: CPU-Benchmark, Festplatten-Analyse, Netzwerk-Ping, Junk-Scanner und RAM-Aufräumen.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Konfetti-Überraschung beim ersten Start nach dem Update: 5 Sekunden animiertes Konfetti, Countdown-Balken ganz oben und eigene Fanfare.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Live-Countdown bis zum nächsten Update – 24 Stunden in App und Website, startet sofort mit dem Release.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Update-Prüfer in den Einstellungen: fragt GitHub live ab, ob eine neuere Version existiert.</p></div>
+    <div class="item"><span class="kind k-verb">VERBESSERT</span><p>Das Was-ist-neu-Overlay startet jetzt erst nach der Konfetti-Überraschung – nichts überlappt mehr.</p></div>
+    <div class="item"><span class="kind k-verb">VERBESSERT</span><p>Changelog-Board in App und Website um den v1.3-Eintrag mit allen Tools erweitert.</p></div>
+    <div class="item"><span class="kind k-fix">GEFIXT</span><p>Screenshot-Helfer und Tab-Navigation laufen auch mit geöffnetem Tweaks-Fenster stabil.</p></div>
+  </div>
 
   <div class="release reveal">
     <div class="rel-head">
@@ -446,14 +489,14 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
-    <div class="brandline">EAGLE CLIENT · V1.2 · PERFORMANCE CORE</div>
+    <div class="brandline">EAGLE CLIENT · V1.3 · PERFORMANCE CORE</div>
     <div>Eagle client passt ausschließlich offizielle Einstellungen an.</div>
     <p class="disclaimer">
       Kein Injection, keine Mods, keine Cheats – nur Tuning über offizielle Config-Dateien.
       Roblox und Fortnite sind Marken ihrer jeweiligen Besitzer; dieses Projekt steht in keiner
       Verbindung zu Roblox Corporation oder Epic Games.
     </p>
-    <p style="margin-top:16px">© 2026 Eagle Client · <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.2/EagleClient.exe" download>Download v1.2</a></p>
+    <p style="margin-top:16px">© 2026 Eagle Client · <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.3/EagleClient.exe" download>Download v1.3</a></p>
   </div>
 </footer>
 
@@ -512,6 +555,27 @@ const cio=new IntersectionObserver(es=>es.forEach(e=>{
   requestAnimationFrame(step); cio.unobserve(el);
 }),{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+/* ---------- Live-Countdown: 24 h bis zum nächsten Update (identisch zur App) ---------- */
+(function(){
+  const NEXT = Date.parse("2026-11-16T06:00:00Z"); /* = App: VersionInfo.NextUpdateUtc */
+  const clock = document.getElementById('updClock');
+  const hint  = document.getElementById('updHint');
+  function tick(){
+    if(!clock) return;
+    const left = NEXT - Date.now();
+    if(left <= 0){
+      clock.textContent = 'JETZT!';
+      if(hint) hint.textContent = 'Das Update ist da – schau im Changelog vorbei!';
+      return;
+    }
+    const s = Math.floor(left/1000);
+    const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+    clock.textContent = String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');
+  }
+  tick();                                   /* sofort ein korrekter Wert (auch bei ?static) */
+  if(!window.__static) setInterval(tick,1000);
+})();
 </script>
 </body>
 </html>
