@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eagle Client - Download v1.3</title>
-<meta name="description" content="Eagle Client: Roblox Performance Client mit Fast Flags, FPS-Boost, Games-Suche, Fortnite-Einstellungen und fünf echten Tools. Kein Injection, kein Cheat. Jetzt EXE downloaden.">
+<title>Eagle Client - Download v1.4</title>
+<meta name="description" content="Eagle Client: Roblox Performance Client mit Fast Flags, FPS-Boost, Games-Suche, Fortnite-Einstellungen, Eagle Defender, KI-Chat, Discord und Minecraft-Eagle-Mod. Kein Injection, kein Cheat. Jetzt EXE downloaden.">
 <style>
   :root{
-    --bg:#03050F; --bg2:#070B22; --panel:#0A0F26;
+    --bg:#04060F; --bg2:#070B1E; --panel:#0A0F26;
     --cyan:#00E5FF; --violet:#7C4DFF; --magenta:#FF2BD6; --lime:#39FF14;
     --text:#E7F1FF; --dim:#8FA6CE; --dimmer:#5F7BA8;
     --border:rgba(0,229,255,.28);
@@ -27,7 +27,7 @@
       radial-gradient(900px 600px at 12% -10%, rgba(0,229,255,.20), transparent 60%),
       radial-gradient(800px 700px at 95% 20%, rgba(124,77,255,.22), transparent 60%),
       radial-gradient(700px 700px at 50% 110%, rgba(255,43,214,.16), transparent 60%),
-      linear-gradient(160deg,#03050F 0%,#070B22 55%,#150B3E 100%);
+      linear-gradient(160deg,#04060F 0%,#070B1E 55%,#150B3E 100%);
   }
   .bg-grid{position:fixed; inset:0; z-index:-2; opacity:.5;
     background-image:linear-gradient(rgba(0,229,255,.07) 1px,transparent 1px),
@@ -50,7 +50,7 @@
   nav{position:fixed; top:0; left:0; right:0; z-index:50;
     display:flex; align-items:center; gap:18px;
     padding:14px clamp(16px,4vw,44px);
-    background:rgba(4,7,20,.72); backdrop-filter:blur(14px);
+    background:linear-gradient(180deg,rgba(4,6,15,.97),rgba(4,6,15,.9));
     border-bottom:1px solid rgba(0,229,255,.22);
   }
   .brand{display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:.14em; font-size:15px}
@@ -60,7 +60,7 @@
     box-shadow:0 0 18px rgba(0,229,255,.55); animation:spin 7s linear infinite}
   .logo span{font-size:17px}
   @keyframes spin{to{transform:rotate(360deg)}}
-  .brand b{background:linear-gradient(90deg,#fff,#8FF6FF 45%,#FF8AE8);
+  .brand b{background:linear-gradient(90deg,#00E5FF,#fff 45%,#FF2BD6);
     -webkit-background-clip:text; background-clip:text; color:transparent}
   .ver{font-family:var(--mono); font-size:11px; font-weight:700; color:#FFB8EE;
     padding:3px 9px; border:1px solid rgba(255,43,214,.55); border-radius:8px;
@@ -75,10 +75,10 @@
     font-weight:700; font-size:16px; padding:16px 30px; border-radius:999px;
     text-decoration:none; transition:transform .18s ease, box-shadow .18s ease, filter .18s;
     position:relative; overflow:hidden; letter-spacing:.02em}
-  .btn-primary{color:#fff; background:linear-gradient(120deg,#00F0FF,#38BDF8 45%,#7C4DFF);
+  .btn-primary{color:#fff; background:linear-gradient(120deg,#00E5FF,#7C4DFF 50%,#FF2BD6);
     box-shadow:0 0 26px rgba(0,229,255,.55), inset 0 0 0 1px rgba(255,255,255,.35)}
-  .btn-primary:hover{transform:translateY(-3px) scale(1.02);
-    box-shadow:0 0 46px rgba(0,229,255,.85), inset 0 0 0 1px rgba(255,255,255,.6)}
+  .btn-primary:hover{transform:translateY(-3px) scale(1.02); filter:brightness(1.14);
+    box-shadow:0 0 46px rgba(0,229,255,.9), 0 0 70px rgba(255,43,214,.45), inset 0 0 0 1px rgba(255,255,255,.6)}
   .btn-primary::after{content:""; position:absolute; top:0; bottom:0; width:70px; left:-90px;
     background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);
     animation:shine 2.6s ease-in-out infinite}
@@ -89,7 +89,7 @@
   .btn-sm{padding:10px 20px; font-size:14px}
   .btn-pulse{animation:pulse 2.2s ease-in-out infinite}
   @keyframes pulse{0%,100%{box-shadow:0 0 26px rgba(0,229,255,.5)}
-    50%{box-shadow:0 0 52px rgba(0,229,255,.95),0 0 90px rgba(124,77,255,.5)}}
+    50%{box-shadow:0 0 52px rgba(0,229,255,.95),0 0 90px rgba(124,77,255,.55),0 0 110px rgba(255,43,214,.4)}}
 
   /* ---------- Layout ---------- */
   .wrap{width:min(1180px,92vw); margin:0 auto}
@@ -97,8 +97,9 @@
   .kicker{font-family:var(--mono); font-size:12px; letter-spacing:.32em; color:var(--cyan);
     text-transform:uppercase; margin-bottom:14px}
   h2{font-size:clamp(28px,4.4vw,46px); font-weight:800; line-height:1.15; margin-bottom:14px}
-  h2 .grad{background:linear-gradient(90deg,#fff,#8FF6FF 45%,#FF8AE8);
-    -webkit-background-clip:text; background-clip:text; color:transparent}
+  h2 .grad{background:linear-gradient(90deg,#00E5FF 0%,#FFFFFF 45%,#FF2BD6 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:2px 0 0 rgba(255,43,214,.5), -2px 0 0 rgba(0,229,255,.5)}
   .sub{color:var(--dim); max-width:680px; font-size:17px}
 
   /* ---------- Hero ---------- */
@@ -111,9 +112,10 @@
   .chip.lime{border-color:rgba(57,255,20,.45); background:rgba(57,255,20,.10); color:#B7FFCB}
   h1{font-size:clamp(42px,9vw,104px); font-weight:900; letter-spacing:-.02em; line-height:.98;
     text-transform:uppercase}
-  h1 .grad{background:linear-gradient(100deg,#00E5FF 0%,#fff 25%,#FF8AE8 55%,#7C4DFF 85%,#00E5FF 100%);
+  h1 .grad{background:linear-gradient(100deg,#00E5FF 0%,#fff 25%,#FF2BD6 55%,#7C4DFF 85%,#00E5FF 100%);
     background-size:300% 100%; -webkit-background-clip:text; background-clip:text; color:transparent;
-    animation:flow 6s linear infinite; filter:drop-shadow(0 0 34px rgba(0,229,255,.45))}
+    animation:flow 6s linear infinite; filter:drop-shadow(0 0 34px rgba(0,229,255,.45));
+    text-shadow:5px 0 0 rgba(255,43,214,.45), -5px 0 0 rgba(0,229,255,.45)}
   @keyframes flow{to{background-position:300% 0}}
   .hero p.lead{color:var(--dim); font-size:clamp(16px,2vw,20px); max-width:720px;
     margin:24px auto 8px}
@@ -148,7 +150,7 @@
     border:1px solid var(--border); border-radius:16px; padding:26px 22px; text-align:center;
     position:relative; overflow:hidden}
   .stat::before{content:""; position:absolute; top:0; left:18px; right:18px; height:1.5px;
-    background:linear-gradient(90deg,var(--cyan),transparent 60%,var(--magenta))}
+    background:linear-gradient(90deg,var(--cyan),var(--violet) 50%,var(--magenta) 85%,transparent)}
   .stat .num{font-size:40px; font-weight:900; font-family:var(--mono);
     background:linear-gradient(90deg,#00E5FF,#7C4DFF); -webkit-background-clip:text;
     background-clip:text; color:transparent}
@@ -172,6 +174,24 @@
   .tag{display:inline-block; margin-top:14px; font-family:var(--mono); font-size:11px;
     letter-spacing:.14em; color:#8FF6FF; border:1px solid rgba(0,229,255,.4);
     padding:3px 9px; border-radius:6px; background:rgba(0,229,255,.08)}
+
+  /* ---------- Sticker / Badges (Design-Refresh „2021 trifft 2026“) ---------- */
+  .sticker{position:absolute; top:12px; right:14px; z-index:3;
+    font-family:var(--mono); font-size:10px; font-weight:800; letter-spacing:.12em;
+    text-transform:uppercase; padding:4px 9px; border-radius:4px;
+    transform:rotate(4deg); border:1px solid rgba(255,255,255,.6);
+    background:linear-gradient(120deg,#00E5FF,#7C4DFF 55%,#FF2BD6);
+    color:#04060F; box-shadow:0 0 16px rgba(0,229,255,.55), 0 4px 10px rgba(0,0,0,.45)}
+  .sticker.alt{background:linear-gradient(120deg,#FF2BD6,#7C4DFF 55%,#00E5FF); color:#fff;
+    box-shadow:0 0 16px rgba(255,43,214,.6), 0 4px 10px rgba(0,0,0,.45)}
+  .fake-badge{display:inline-block; margin:2px 0 12px;
+    font-family:var(--mono); font-size:11px; font-weight:800; letter-spacing:.08em;
+    text-transform:uppercase; color:#FFE3F8; padding:6px 12px; border-radius:6px;
+    border:2px dashed rgba(255,43,214,.9); background:rgba(255,43,214,.16);
+    transform:rotate(-2.5deg); box-shadow:0 0 18px rgba(255,43,214,.45)}
+  .tag.joke-tag{color:#FFB8EE; border-color:rgba(255,43,214,.55); background:rgba(255,43,214,.12)}
+  .card.joke:hover{border-color:rgba(255,43,214,.75);
+    box-shadow:0 18px 46px rgba(0,0,0,.5),0 0 34px rgba(255,43,214,.4)}
 
   /* ---------- Steps ---------- */
   .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:44px}
@@ -205,7 +225,7 @@
   .rel-date{font-family:var(--mono); font-size:13px; color:var(--dimmer)}
   .rel-title{font-size:17px; font-weight:700}
   .rel-line{height:1.5px; margin:16px 0 6px;
-    background:linear-gradient(90deg,var(--cyan),transparent)}
+    background:linear-gradient(90deg,var(--cyan),var(--violet) 45%,var(--magenta) 80%,transparent)}
   .item{display:flex; gap:14px; align-items:flex-start; padding:9px 0}
   .kind{flex:0 0 auto; min-width:104px; text-align:center; font-family:var(--mono);
     font-size:10.5px; font-weight:700; letter-spacing:.08em; padding:4px 8px; border-radius:7px;
@@ -240,9 +260,10 @@
   <div class="brand">
     <div class="logo"><span>🦅</span></div>
     <b>EAGLE CLIENT</b>
-    <span class="ver">v1.3</span>
+    <span class="ver">v1.4</span>
   </div>
   <div class="links">
+    <a href="#whatsnew">Neu v1.4</a>
     <a href="#features">Features</a>
     <a href="#howto">So geht's</a>
     <a href="#changelog">Changelog</a>
@@ -253,7 +274,7 @@
 <!-- ================= HERO ================= -->
 <header class="hero wrap">
   <div class="badge-row reveal">
-    <span class="chip">NEUES UPDATE v1.3</span>
+    <span class="chip">NEUES UPDATE v1.4</span>
     <span class="chip magenta">WINDOWS 10/11 · 64-BIT</span>
     <span class="chip lime">0 INJECTION · 0 MODS</span>
   </div>
@@ -263,16 +284,17 @@
   <p class="lead reveal">
     Der Roblox <b>Performance Client</b>: Fast Flags, FPS-Boost, Games-Suche, ein
     kompletter Fortnite-Tab und fünf echte Tools – plus <b>Eagle Tweaks</b>, Plugins
-    und Admin-Steuerung für deinen ganzen PC. Alles über offizielle Configs: kein Injecting, kein Cheat.
+    und Admin-Steuerung für deinen ganzen PC. Neu in v1.4: <b>Eagle Defender</b>,
+    <b>Eagle KI</b>, Discord und Minecraft mit Eagle Mod. Alles über offizielle Configs: kein Injecting, kein Cheat.
   </p>
 
   <div class="cta reveal">
-    <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.3/EagleClient.exe" download class="btn btn-primary btn-pulse">⬇ EXE HERUNTERLADEN</a>
-    <a href="#changelog" class="btn btn-ghost">✨ Was ist neu in v1.3?</a>
+    <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.4/EagleClient.exe" download class="btn btn-primary btn-pulse">⬇ EXE HERUNTERLADEN</a>
+    <a href="#changelog" class="btn btn-ghost">✨ Was ist neu in v1.4?</a>
   </div>
 
   <div class="dl-meta reveal">
-    <b>EagleClient.exe</b> · Version <b>1.3</b> · ~162 MB · Standalone-EXE · kein Installer
+    <b>EagleClient.exe</b> · Version <b>1.4</b> · ~162 MB · Standalone-EXE · kein Installer
   </div>
 
   <!-- Live-Countdown: 24 h bis zum nächsten Update (identisch zur App) -->
@@ -286,7 +308,7 @@
   <div class="stats reveal" style="margin-top:52px">
     <div class="stat"><div class="num" data-count="77">0</div><div class="lbl">Fortnite-Einstellungen</div></div>
     <div class="stat"><div class="num" data-count="12" data-suffix="+">0</div><div class="lbl">Fast Flags mit einem Klick</div></div>
-    <div class="stat"><div class="num" data-count="9">0</div><div class="lbl">Bereiche in der Seitenleiste</div></div>
+    <div class="stat"><div class="num" data-count="13">0</div><div class="lbl">Bereiche in der Seitenleiste</div></div>
     <div class="stat"><div class="num" data-count="0">0</div><div class="lbl">Injectionen &amp; Mods</div></div>
   </div>
 </header>
@@ -294,8 +316,8 @@
 <!-- ================= MARQUEE ================= -->
 <div class="marquee">
   <div class="track">
-    <span>FAST FLAGS <i>◆</i> FPS BOOST <i>◆</i> GAMES-SUCHE <i>◆</i> FORTNITE CONFIG <i>◆</i> NEON HUD <i>◆</i> LIVE-UHR <i>◆</i> KEIN CHEAT <i>◆</i>&nbsp;</span>
-    <span>FAST FLAGS <i>◆</i> FPS BOOST <i>◆</i> GAMES-SUCHE <i>◆</i> FORTNITE CONFIG <i>◆</i> NEON HUD <i>◆</i> LIVE-UHR <i>◆</i> KEIN CHEAT <i>◆</i>&nbsp;</span>
+    <span>FAST FLAGS <i>◆</i> FPS BOOST <i>◆</i> GAMES-SUCHE <i>◆</i> FORTNITE CONFIG <i>◆</i> EAGLE DEFENDER <i>◆</i> EAGLE KI <i>◆</i> DISCORD <i>◆</i> MINECRAFT <i>◆</i> NEON HUD <i>◆</i> LIVE-UHR <i>◆</i> KEIN CHEAT <i>◆</i>&nbsp;</span>
+    <span>FAST FLAGS <i>◆</i> FPS BOOST <i>◆</i> GAMES-SUCHE <i>◆</i> FORTNITE CONFIG <i>◆</i> EAGLE DEFENDER <i>◆</i> EAGLE KI <i>◆</i> DISCORD <i>◆</i> MINECRAFT <i>◆</i> NEON HUD <i>◆</i> LIVE-UHR <i>◆</i> KEIN CHEAT <i>◆</i>&nbsp;</span>
   </div>
 </div>
 
@@ -363,6 +385,66 @@
   </div>
 </section>
 
+<!-- ================= NEU IN V1.4 ================= -->
+<section id="whatsnew" class="wrap">
+  <div class="kicker reveal">// Neu in v1.4</div>
+  <h2 class="reveal">Frisch drin: <span class="grad">Defender, KI &amp; Eagle Mod</span></h2>
+  <p class="sub reveal">Sieben neue Bereiche direkt nach dem Update – dunkel, neon und ohne Umwege. Alles genauso aufgebaut wie der Rest der App.</p>
+
+  <div class="grid">
+    <div class="card reveal">
+      <span class="sticker">NEU</span>
+      <div class="ico">🔍</div>
+      <h3>Eagle Defender</h3>
+      <p>VirusScan-artiger Datei-Inspektor: Hash berechnen, Signatur und PE-Analyse prüfen, Microsoft-Defender-Scan starten und neue Dateien über den Download-Wächter im Blick behalten – dazu ein Live-Schutzstatus.</p>
+      <span class="tag">KOSTLOS · KEIN LOGIN</span>
+    </div>
+    <div class="card reveal">
+      <span class="sticker">FREE</span>
+      <div class="ico">🤖</div>
+      <h3>Eagle KI</h3>
+      <p>Kostenloser KI-Chat ganz ohne API-Key und ohne Anmeldung – Fragen stellen, übersetzen, Code erklären, alles über Pollinations. Für alles nutzbar, jederzeit gratis.</p>
+      <span class="tag">OHNE API-KEY</span>
+    </div>
+    <div class="card reveal">
+      <span class="sticker">NEU</span>
+      <div class="ico">💬</div>
+      <h3>Discord in der App</h3>
+      <p>Der volle Discord-Webclient ist direkt eingebettet: Nachrichten schreiben, in Calls gehen und Gruppen verwalten – mit eigenem Datenordner, ganz ohne zweites Fenster.</p>
+      <span class="tag">WEBCLIENT EINGEBETTET</span>
+    </div>
+    <div class="card reveal">
+      <span class="sticker">NEU</span>
+      <div class="ico">⛏️</div>
+      <h3>Minecraft + Eagle Mod</h3>
+      <p>Neuer Minecraft-Bereich mit Eagle-Mod-Installer, Video-Optimierer, Skin-Lookup und Server-Ping. Der Fabric-Mod „Eagle Mod“ öffnet mit der rechten Umschalttaste das Ingame-Menü mit Cheater-Menü (X-Ray) und Performance-Tab.</p>
+      <span class="tag">FABRIC · RECHTE SHIFT</span>
+    </div>
+    <div class="card joke reveal">
+      <span class="sticker alt">FAKE</span>
+      <div class="ico">🤡</div>
+      <h3>Fake Partnership</h3>
+      <span class="fake-badge">FAKE PARTNERSHIP · offensichtlich ein Witz</span>
+      <p>Eine „Kooperation“ mit dem Blackhole Client – die es nicht gibt. Dieser Block ist absichtlich ein Scherz: keine echte Partnerschaft, keine gemeinsame Version, kein Blackhole Client. Nur ein Gag im Changelog.</p>
+      <span class="tag joke-tag">SCHERZ · NICHT REAL</span>
+    </div>
+    <div class="card reveal">
+      <span class="sticker">NEU</span>
+      <div class="ico">🎨</div>
+      <h3>Hintergrund-Editor</h3>
+      <p>Den App-Hintergrund in den Einstellungen selbst zusammenbauen: Orbs, Netz, Scanlines, Lichtstrahl und Partikel live anpassen – mit Presets und eigenem Hintergrundbild.</p>
+      <span class="tag">ORBS · NETZ · SCANLINES</span>
+    </div>
+    <div class="card reveal">
+      <span class="sticker">NEU</span>
+      <div class="ico">🎬</div>
+      <h3>Update-Cutscene</h3>
+      <p>Beim ersten Start nach dem Update läuft eine einmalige kinematische Eröffnung: Logo-Bildung, Glitch-Typo und Feature-Flug. Einmal – und nie wieder.</p>
+      <span class="tag">EINMAL · NIE WIEDER</span>
+    </div>
+  </div>
+</section>
+
 <!-- ================= HOW TO ================= -->
 <section id="howto" class="wrap">
   <div class="kicker reveal">// So geht's</div>
@@ -390,21 +472,21 @@
 <section id="download" class="wrap">
   <div class="dl reveal">
     <div class="kicker" style="color:#8FF6FF">// Download</div>
-    <h2 style="margin-bottom:10px">Hol dir <span class="grad">v1.3</span></h2>
-    <p class="sub" style="margin:0 auto">Die aktuelle Version mit fünf echten Tools, Konfetti-Überraschung, Eagle Tweaks, Plugins und Admin-Steuerung.</p>
+    <h2 style="margin-bottom:10px">Hol dir <span class="grad">v1.4</span></h2>
+    <p class="sub" style="margin:0 auto">Die aktuelle Version mit Eagle Defender, kostenlosem KI-Chat, Discord in der App, Minecraft &amp; Eagle Mod, Hintergrund-Editor und Update-Cutscene.</p>
 
     <div class="cta" style="margin-top:32px">
-      <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.3/EagleClient.exe" download class="btn btn-primary btn-pulse" style="font-size:19px;padding:20px 42px">
+      <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.4/EagleClient.exe" download class="btn btn-primary btn-pulse" style="font-size:19px;padding:20px 42px">
         ⬇ EAGLECLIENT.EXE LADEN
       </a>
     </div>
 
     <div class="file">
-      <span class="pill">v1.3</span>
+      <span class="pill">v1.4</span>
       <span class="pill">~162 MB</span>
       <span class="pill">Windows x64</span>
       <span class="pill">Self-contained</span>
-      <span class="pill">15.11.2026</span>
+      <span class="pill">17.11.2026</span>
     </div>
   </div>
 </section>
@@ -414,6 +496,30 @@
   <div class="kicker reveal">// Changelog</div>
   <h2 class="reveal">Was sich <span class="grad">geändert hat</span></h2>
   <p class="sub reveal">Jedes Update hebt die Versionsnummer – hier steht genau, was dazukam, verbessert, gefixt oder entfernt wurde. Derselbe Changelog steht in der App unter Einstellungen.</p>
+
+  <div class="release reveal">
+    <div class="rel-head">
+      <span class="rel-ver">v1.4</span>
+      <span class="rel-date">17.11.2026</span>
+      <span class="rel-title">HUGE UPDATE – Defender, KI, Discord &amp; Eagle Mod</span>
+    </div>
+    <div class="rel-line"></div>
+
+    <div class="item"><span class="kind k-neu">NEU</span><p>Update-Cutscene: Beim ersten Start nach dem Update läuft eine einmalige kinematische Eröffnung – Logo-Bildung, Glitch-Typo und Feature-Flug. Einmal, nie wieder.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Eagle Defender – neuer Sicherheitsbereich: Datei-Inspektor mit Hash, Signatur, PE-Analyse und Defender-Scan, Download-Wächter für neue Dateien und Live-Schutzstatus.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Discord direkt in der App: voller Discord-Webclient (Nachrichten, Calls, Gruppen) eingebettet, mit eigenem Datenordner.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Eagle KI – kostenloser KI-Chat ohne API-Key: fragen, übersetzen, Code erklären – alles ohne Anmeldung.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Hintergrund-Editor in den Einstellungen: Orbs, Netz, Scanlines, Lichtstrahl und Partikel live anpassen, mit Presets und eigenem Bild.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Minecraft-Bereich: Eagle-Mod-Installer, Video-Optimierer für options.txt, Skin-Lookup über die Mojang-API und Server-Ping.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Eagle Mod (Fabric): Rechte Umschalttaste öffnet das Ingame-Menu mit Cheater-Menü (X-Ray), Performance-Tab und Info-Overlay.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Fake-Partnership mit Blackhole Client – absichtlich offensichtlich fake und als Scherz markiert.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Eagle Tweaks um Dutzende neue Schalter erweitert: Gaming, Netzwerk, Privacy und Visual.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Design-Refresh „2021 trifft 2026“ – holografische Verläufe, crispere Kanten und neue Typo in App und Website.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Website v1.4 mit Minecraft-, Defender-, KI- und Discord-Sektion, neuem Countdown und Direkt-Download.</p></div>
+    <div class="item"><span class="kind k-neu">NEU</span><p>Lag-Fix-Paket: Dauer-Animationen auf 15–20 fps gedeckelt, Orb-Verläufe gecacht, stehende Glow-Ebenen von animierten Kindern getrennt.</p></div>
+    <div class="item"><span class="kind k-verb">VERBESSERT</span><p>Was-ist-neu-Overlay zeigt jetzt den kompletten v1.4-Changelog mit allen zwölf Features.</p></div>
+    <div class="item"><span class="kind k-fix">GEFIXT</span><p>Hohe CPU-Auslastung im Leerlauf des Hauptfensters (Animations-Frame-Rate, BitmapCache, Transparency-Entfernung).</p></div>
+  </div>
 
   <div class="release reveal">
     <div class="rel-head">
@@ -489,14 +595,14 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
-    <div class="brandline">EAGLE CLIENT · V1.3 · PERFORMANCE CORE</div>
+    <div class="brandline">EAGLE CLIENT · V1.4 · PERFORMANCE CORE</div>
     <div>Eagle client passt ausschließlich offizielle Einstellungen an.</div>
     <p class="disclaimer">
       Kein Injection, keine Mods, keine Cheats – nur Tuning über offizielle Config-Dateien.
       Roblox und Fortnite sind Marken ihrer jeweiligen Besitzer; dieses Projekt steht in keiner
       Verbindung zu Roblox Corporation oder Epic Games.
     </p>
-    <p style="margin-top:16px">© 2026 Eagle Client · <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.3/EagleClient.exe" download>Download v1.3</a></p>
+    <p style="margin-top:16px">© 2026 Eagle Client · <a href="https://github.com/sigmabambam/eagle-client/releases/download/v1.4/EagleClient.exe" download>Download v1.4</a></p>
   </div>
 </footer>
 
@@ -558,7 +664,7 @@ document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
 /* ---------- Live-Countdown: 24 h bis zum nächsten Update (identisch zur App) ---------- */
 (function(){
-  const NEXT = Date.parse("2026-11-16T06:00:00Z"); /* = App: VersionInfo.NextUpdateUtc */
+  const NEXT = Date.parse("2026-11-19T05:00:00Z"); /* = App: VersionInfo.NextUpdateUtc */
   const clock = document.getElementById('updClock');
   const hint  = document.getElementById('updHint');
   function tick(){
